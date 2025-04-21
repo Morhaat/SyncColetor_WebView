@@ -1,0 +1,7 @@
+version: 2
+
+tunnels:
+  meuapp:
+    proto: http
+    addr: 3000
+    host_header: localhost

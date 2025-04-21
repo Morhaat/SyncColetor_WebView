@@ -1,0 +1,5 @@
+{
+  "appId": "com.sync.coletor",
+  "appName": "synccoletor-webview",
+  "webDir": "dist"
+}

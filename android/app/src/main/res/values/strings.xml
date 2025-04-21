@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">synccoletor-webview</string>
+    <string name="title_activity_main">synccoletor-webview</string>
+    <string name="package_name">com.sync.coletor</string>
+    <string name="custom_url_scheme">com.sync.coletor</string>
+</resources>
