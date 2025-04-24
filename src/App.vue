@@ -18,5 +18,6 @@ body, #app {
   background-size: cover;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
+  margin-top: 40px;
 }
 </style>

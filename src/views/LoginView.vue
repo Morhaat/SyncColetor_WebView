@@ -13,19 +13,22 @@
       </div>
     </div>
   </template>
-  
+
   <script setup>
   import { ref, onMounted } from 'vue'
   import { useRouter } from 'vue-router'
   import { loginUser, verificarSessao } from '@/services/authService'
   import { useUserStore } from '@/stores/user'
+  import { isAndroid, isWeb } from '@/utils/platform';
   import MD5 from 'crypto-js/md5'
-  
+
   const router = useRouter()
   const username = ref('')
   const password = ref('')
   const error = ref(null)
   const statusApi = ref('')
+  const is_Android = ref(false)
+  const is_Web = ref(false)
 
   const userStore = useUserStore()
 
@@ -39,7 +42,8 @@
         const health = await response.json()
         statusApi.value = health.status
       }
-
+      is_Android.value = isAndroid()
+      is_Web.value = isWeb()
       userStore.carregarUsuario()
       const valido = await verificarSessao()
       //console.log(valido)
@@ -47,7 +51,16 @@
         if(!userStore.nome){
           userStore.setUsuario(valido.data)
         }
-        router.push('/home')
+
+        return router.push('/home')
+        // if(is_Android.value){
+        //   return router.push('/homeAndroid')
+        // }
+        // if(is_Web.value){
+        //   return router.push('/home')
+        // }
+
+        //return router.push('/notFound')
       }else{
           router.push('/login')
       }
@@ -57,14 +70,22 @@
       error.value = 'Erro ao conectar'
     }
   })
-  
+
   async function login() {
     error.value = null
     try {
         const pass = MD5(password.value).toString();
       const success = await loginUser(username.value, pass)
       if (success) {
-        router.push('/home')
+        return router.push('/home')
+        // if(is_Android.value){
+        //   return router.push('/homeAndroid')
+        // }
+        // if(is_Web.value){
+        //   return router.push('/home')
+        // }
+
+       // return router.push('/notFound')
       } else {
         error.value = 'Usuário ou senha inválidos'
       }
@@ -73,7 +94,7 @@
     }
   }
   </script>
-  
+
 
 <style scoped>
 html, body {

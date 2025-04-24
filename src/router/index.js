@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
-import HomeView from '@/views/HomeView.vue'
-import WaveView from '@/views/separation/WaveView.vue'
-import ZoneView from '@/views/separation/ZoneView.vue'
-import BatchView from '@/views/separation/BatchView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
+import HomeAndroidView from '@/views/android/HomeAndroidView.vue'
+import HomeWebView from '@/views/HomeWebView.vue'
+import WaveView from '@/views/android/separation/WaveView.vue'
+import ZoneView from '@/views/android/separation/ZoneView.vue'
+import BatchView from '@/views/android/separation/BatchView.vue'
 import { useUserStore } from '@/stores/user'
 import { verificarSessao } from '@/services/authService'
+import SeparationView from '@/views/SeparationView.vue'
+import ProductReceivingView from '@/views/ProductReceivingView.vue'
+import StockManagementView from '@/views/StockManagementView.vue'
+import InventoryView from '@/views/InventoryView.vue'
+import CadUserView from '@/views/CadUserView.vue'
 
 const routes = [
   {
@@ -19,9 +26,44 @@ const routes = [
   },
   {
     path: '/home',
-    name: 'home',
-    component: HomeView,
+    name: 'homeWeb',
+    component: HomeWebView,
     meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/homeAndroid',
+    name: 'homeAndroid',
+    component: HomeAndroidView,
+    meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/separation',
+    name: 'separation',
+    component: SeparationView,
+    meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/receiving',
+    name: 'receiving',
+    component: ProductReceivingView,
+    meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/stock',
+    name: 'stock',
+    component: StockManagementView,
+    meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/inventory',
+    name: 'inventory',
+    component: InventoryView,
+    meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/notFound',
+    name: '404',
+    component: NotFoundView
   },
   {
     path: '/wave',
@@ -40,6 +82,17 @@ const routes = [
     name: 'batch',
     component: BatchView,
     meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/cad_user',
+    name: 'cad_user',
+    component: CadUserView,
+    meta: { requiresAuth: true }  // ← ROTAS PROTEGIDAS
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFoundView
   }
 ]
 
