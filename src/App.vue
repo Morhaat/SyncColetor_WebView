@@ -9,6 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <style>
 /* Aplica o background degradê global */
 body, #app {
+  top: env(safe-area-inset-top, 0);
   min-height: 100dvh;
   margin: 0;
   padding: 0;

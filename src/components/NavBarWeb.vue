@@ -1,5 +1,5 @@
 <template>
-  <div v-if="is_Web">
+  <div v-if="is_Web" class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-custom px-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">SyncColetor</a>
@@ -55,8 +55,8 @@
     </nav>
   </div>
 
-  <div v-if="is_Android"> 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+  <div v-if="is_Android" > 
+    <nav class="navbar navbar-expand-lg navbar-custom px-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Menu</a>
         <button

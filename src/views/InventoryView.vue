@@ -1,6 +1,6 @@
 <template>
     <NavBarWeb :nivel_acesso = "Number(userStore.nivel_acesso)"></NavBarWeb>
-    <div class="container py-4">
+    <div class="container py-4 mt-5">
       <h2 class="mb-4 text-center">Gerenciamento de Inventários</h2>
   
       <!-- Inventário em andamento -->

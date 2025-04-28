@@ -1,6 +1,6 @@
 <template>
     <NavBarWeb :nivel_acesso = "Number(userStore.nivel_acesso)"></NavBarWeb>
-    <div class="container my-4 geral">
+    <div class="container my-4  mt-5">
       <h1 class="text-center mb-4">Recebimento de Mercadorias</h1>
   
       <!-- Aguardando Recebimento -->

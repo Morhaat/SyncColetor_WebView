@@ -4,6 +4,7 @@ export const useUserStore = defineStore('user', {
   state: () => ({
     nome: null,
     sobrenome: null,
+    usuario:null,
     setor: null,
     nivel_acesso: null,
   }),
@@ -11,6 +12,7 @@ export const useUserStore = defineStore('user', {
     setUsuario(dados) {
       this.nome = dados.nome
       this.sobrenome = dados.sobrenome
+      this.usuario = dados.usuario
       this.setor = dados.setor
       this.nivel_acesso = dados.nivel_acesso
 
@@ -22,6 +24,7 @@ export const useUserStore = defineStore('user', {
         const obj = JSON.parse(dados)
         this.nome = obj.nome
         this.sobrenome = obj.sobrenome
+        this.usuario = obj.usuario
         this.setor = obj.setor
         this.nivel_acesso = obj.nivel_acesso
       }
@@ -29,6 +32,7 @@ export const useUserStore = defineStore('user', {
     logout() {
       this.nome = null
       this.sobrenome = null
+      this.usuario = null
       this.setor = null
       this.nivel_acesso = null
       localStorage.removeItem('usuario')

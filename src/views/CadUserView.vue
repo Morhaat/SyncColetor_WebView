@@ -1,6 +1,6 @@
 <template>
     <NavBarWeb :nivel_acesso = "Number(userStore.nivel_acesso)"></NavBarWeb>
-    <div class="container mt-4">
+    <div class="container mt-5">
       <h2 class="mb-3">Gerenciamento de Usuários</h2>
   
       <!-- Formulário -->

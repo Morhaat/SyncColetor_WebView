@@ -1,6 +1,6 @@
 <template>
     <NavBarWeb :nivel_acesso = "Number(userStore.nivel_acesso)"></NavBarWeb>
-    <div class="container py-4 geral">
+    <div class="container py-4  mt-5">
       <div class="card shadow-sm">
         <div class="card-section">
           <h5 class="m-0">Gerenciamento de Tarefas de Picking</h5>
